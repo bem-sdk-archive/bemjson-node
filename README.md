@@ -27,6 +27,7 @@ Contents
 * [Usage](#usage)
 * [API](#api)
 * [Serialization](#serialization)
+* [TypeScript support](#typescript-support)
 * [Debuggability](#debuggability)
 
 Install
@@ -255,6 +256,13 @@ const str = '{"block":"input","mods":{"available"::true}}';
 
 new BemjsonNode(JSON.parse(str)); // BemjsonNode({ block: 'input', mods: { available: true } });
 ```
+
+TypeScript support
+------------------
+
+The package includes [typings](./index.d.ts) for TypeScript. You have to set up transpilation yourself. When you set `module` to `commonjs` in your `tsconfig.json` file, TypeScript will automatically find the type definitions for `@bem/entity-name`.
+
+The interfaces are provided in global namespace `BEMSDK.EntityName`. It is necessary to use interfaces in JsDoc.
 
 Debuggability
 -------------
